@@ -1,3 +1,3 @@
 FROM tomcat
-EXPOSE 8011
+EXPOSE 8080
 COPY . /usr/local/tomcat/webapps
