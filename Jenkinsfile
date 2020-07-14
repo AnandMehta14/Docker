@@ -29,5 +29,12 @@ pipeline {
                                //  docker push mehta14/jb-hello-world:$BUILD_NUMBER''' 
                }
           } 
+          
+          
+          stage('Docker Image to DockerHub Repo') {
+               steps {
+                    sh label: '', script: '''docker push mehta14/java-project1:$BUILD_NUMBER''' 
+               }
+          } 
      }
 }
