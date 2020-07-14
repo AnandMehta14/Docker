@@ -15,6 +15,10 @@ pipeline {
                }
           } 
           
-          
+          stage('Build Number') {
+               steps {
+                    Build_Number:$BUILD_NUMBER
+               }
+          } 
      }
 }
