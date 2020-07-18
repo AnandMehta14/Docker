@@ -24,8 +24,8 @@ pipeline {
           
           stage('Docker Image') {
                steps {
-                    sh label: '', script: '''docker build -t java-project1:$BUILD_NUMBER .
-                                 docker tag java-project1:$BUILD_NUMBER mehta14/java-project1:$BUILD_NUMBER'''                               
+                    sh label: '', script: '''docker build -t mehta14/java-project1:$BUILD_NUMBER .'''
+                                 ///docker tag java-project1:$BUILD_NUMBER mehta14/java-project1:$BUILD_NUMBER'''                               
                                //  docker push mehta14/jb-hello-world:$BUILD_NUMBER''' 
                }
           } 
