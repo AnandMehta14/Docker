@@ -36,5 +36,12 @@ pipeline {
                     sh label: '', script: '''docker push mehta14/java-project1:$BUILD_NUMBER''' 
                }
           } 
+          
+          stage('Deployment of Image in Production Server') {
+                steps {
+                    sh label: '', script: '''ssh jenkins@172.31.47.222 docker pull mehta14/java-project1:$BUILD_NUMBER
+                                             ssh jenkins@172.31.47.222 docker run -dit -p 8222:8080 mehta14/java-project1:$BUILD_NUMBER''' 
+                }
+          }  
      }
 }
