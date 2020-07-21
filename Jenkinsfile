@@ -40,7 +40,8 @@ pipeline {
           stage('Deployment of Image in Production Server') {
                 steps {
                     sh label: '', script: '''ssh jenkins@172.31.47.222 docker pull mehta14/java-project1:$BUILD_NUMBER
-                                             ssh jenkins@172.31.47.222 docker run -dit -p 8222:8080 mehta14/java-project1:$BUILD_NUMBER''' 
+                                             ssh jenkins@172.31.47.222 docker rm -f my_project2 || True
+                                             ssh jenkins@172.31.47.222 docker run -dit -p 8222:8080 --name my_project2 mehta14/java-project1:$BUILD_NUMBER''' 
                 }
           }  
      }
