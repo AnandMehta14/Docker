@@ -51,5 +51,11 @@ pipeline {
                 }
           }  
           */
+          stage('Update Image Version') {
+               steps {
+                          sh label: '', script: '''sed -i s/latest/$BUILD_NUMBER/ my_deploy.yml'''
+
+                     }
+          }
      }
 }
