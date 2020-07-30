@@ -59,8 +59,8 @@ pipeline {
           }
           
           stage('Connection to K8s') {
-               step {
-                    sg label: '', script: ''' ssh jenkins@172.31.35.224 '''
+               steps {
+                    sh label: '', script: ''' ssh jenkins@172.31.35.224 '''
                }
           }
      }
