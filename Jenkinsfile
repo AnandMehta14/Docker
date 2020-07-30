@@ -60,7 +60,7 @@ pipeline {
           
           stage('Connection to K8s') {
                steps {
-                    sh label: '', script: ''' ssh jenkins@172.31.35.224 '''
+                    sh label: '', script: ''' ssh jenkins@172.31.35.224 sudo touch c.txt'''
                }
           }
      }
