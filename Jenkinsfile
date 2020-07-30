@@ -55,7 +55,13 @@ pipeline {
                steps {
                           sh label: '', script: '''sed -i s/latest/$BUILD_NUMBER/ my_deploy.yml'''
 
-                     }
+               }
+          }
+          
+          stage ('Connection to K8s') {
+               step {
+                    sg label: '', script: ''' ssh jenkins@172.31.35.224 '''
+               }
           }
      }
 }
