@@ -1,1 +1,18 @@
-
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my_deploy_project2
+spec:
+  replica: 3
+  selector: 
+  
+  templets:
+    metadata: 
+      labels:
+        apps: project2-pod
+    spec: 
+      containers: 
+      - name: project2-cont
+        image: mehta14/java-project1:latest
+        ports:
+        - containerPort: 9090
