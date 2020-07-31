@@ -10,7 +10,7 @@ spec:
   template:
     metadata: 
       labels:
-        apps: project2-pod
+        app: project2-pod
     spec: 
       containers: 
       - name: project2-cont
