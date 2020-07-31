@@ -60,7 +60,8 @@ pipeline {
           
           stage('Connection to K8s') {
                steps {
-                    sh label: '', script: ''' scp *.yml jenkins2@172.31.35.224:/home/jenkins2'''
+                    sh label: '', script: ''' scp *.yml jenkins2@172.31.35.224:/home/jenkins2
+                                              ssh jenkins2@172.31.35.224 kubectl apply -f my_deploy.yml'''
                }
           }
      }
