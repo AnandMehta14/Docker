@@ -7,7 +7,7 @@ spec:
   selector: 
     matchLabels:
       app: project2-pod  
-  templets:
+  templet:
     metadata: 
       labels:
         apps: project2-pod
