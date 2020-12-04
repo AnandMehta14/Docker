@@ -13,7 +13,7 @@ pipeline {
                }
           }
          
-          /* stage('Build') {
+          stage('Build') {
                steps {
                     sh 'mvn -Dmaven.test.failure.ignore=true clean package'
                }
@@ -26,7 +26,7 @@ pipeline {
           } 
           
           
-          stage('Docker Image') {
+          /*stage('Docker Image') {
                steps {
                     sh label: '', script: '''docker build -t mehta14/java-project1:$BUILD_NUMBER .'''
                                  ///docker tag java-project1:$BUILD_NUMBER mehta14/java-project1:$BUILD_NUMBER'''                               
