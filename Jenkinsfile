@@ -26,7 +26,7 @@ pipeline {
           } 
           
           
-          /*stage('Docker Image') {
+          stage('Docker Image') {
                steps {
                     sh label: '', script: '''docker build -t mehta14/java-project1:$BUILD_NUMBER .'''
                                  ///docker tag java-project1:$BUILD_NUMBER mehta14/java-project1:$BUILD_NUMBER'''                               
@@ -36,7 +36,7 @@ pipeline {
           } 
           
           
-          stage('Docker Image to DockerHub Repo') {
+         /* stage('Docker Image to DockerHub Repo') {
                steps {
                     sh label: '', script: '''docker push mehta14/java-project1:$BUILD_NUMBER''' 
                }
