@@ -24,6 +24,36 @@ pipeline {
                    echo "Build_Number:$BUILD_NUMBER"
                }
           } 
+     }
+}
+
+
+/*pipeline {
+     agent any
+     
+     tools {
+     maven 'maven'
+     }
+     
+     stages {
+          
+          stage('Git Clone') {
+               steps {
+                    git 'https://github.com/AnandMehta14/Docker.git'
+               }
+          }
+         
+          stage('Build') {
+               steps {
+                    sh 'mvn -Dmaven.test.failure.ignore=true clean package'
+               }
+          } 
+          
+          stage('Build Number') {
+               steps {
+                   echo "Build_Number:$BUILD_NUMBER"
+               }
+          } 
           
           
           stage('Docker Image') {
@@ -36,7 +66,7 @@ pipeline {
           } 
           
           
-         /* stage('Docker Image to DockerHub Repo') {
+         stage('Docker Image to DockerHub Repo') {
                steps {
                     sh label: '', script: '''docker push mehta14/java-project1:$BUILD_NUMBER''' 
                }
@@ -64,6 +94,6 @@ pipeline {
                                               ssh jenkins2@172.31.35.224 kubectl apply -f my_deploy.yml
                                               ssh jenkins2@172.31.35.224 kubectl apply -f my_service.yml'''
                }
-          } */
+          } 
      }
-}
+} */
