@@ -1,6 +1,14 @@
 pipeline {
      agent any
      
+    environment {
+    PROJECT = "arctic-dynamo-291018"
+    CLUSTER = "jenkins-cd"
+    CLUSTER_ZONE = "us-central1-c"
+    //IMAGE_TAG = "gcr.io/${PROJECT}/${APP_NAME}:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
+    JENKINS_CRED = "${PROJECT}"
+  }
+     
      tools {
      maven 'maven'
      }
