@@ -32,6 +32,13 @@ pipeline {
                    echo "Build_Number:$BUILD_NUMBER"
                }
           } 
+          stage("Build image") {
+            steps {
+                script {
+                    myapp = docker.build("DOCKER-HUB-USERNAME/hello:${env.BUILD_ID}")
+                }
+            }
+         }
      }
 }
 
