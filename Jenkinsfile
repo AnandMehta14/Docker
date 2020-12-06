@@ -35,7 +35,7 @@ pipeline {
           stage("Build image") {
             steps {
                 script {
-                    myapp = docker.build("DOCKER-HUB-USERNAME/hello:${env.BUILD_ID}")
+                   sh 'gcloud container clusters list'
                 }
             }
          }
